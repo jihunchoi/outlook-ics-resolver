@@ -14,6 +14,7 @@ def _load_vtimezone_mapping():
         app.vtimezone_mapping = {}
         with open("vtimezones.ndjson", "r") as f:
             for line in f:
+                print(line)
                 entry = json.loads(line)
                 app.vtimezone_mapping[entry["name"]] = entry["content"]
     return app.vtimezone_mapping
